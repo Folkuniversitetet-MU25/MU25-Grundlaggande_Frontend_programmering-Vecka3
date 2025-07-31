@@ -8,11 +8,11 @@ Denna vecka fokuserar vi på layout och responsiv design. Vi introducerar Flexbo
 ---
 
 ## Denna vecka ska de studerande lära sig **kunskaper i/om**:
-1. Grundläggande förståelse för layouttekniker som t.ex. Flexbox och Grid i CSS.
+3. Grundläggande förståelse för layouttekniker som t.ex. Flexbox och Grid i CSS.
 
 ## Denna vecka ska de studerande lära sig **färdigheter i (att)**:
-1. Tillämpa grundläggande flexibla layouter, t.ex. Flexbox och Grid.  
-2. Debugga och testa enkel HTML och CSS.
+8. Tillämpa grundläggande flexibla layouter, t.ex. Flexbox och Grid.  
+11. Debugga och testa enkel HTML och CSS.
 
 ---
 
