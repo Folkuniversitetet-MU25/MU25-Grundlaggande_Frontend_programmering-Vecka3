@@ -26,7 +26,7 @@ main {
   padding: 1rem;
   border: 10px solid #6e1111;
 }
-
+/* -----------------Media Queries---------------------- */
 @media (min-width: 768px) {
   main {
     background: pink;
@@ -49,5 +49,19 @@ main {
     background: blue;
     /* display: none; */
     flex: 1;
+  }
+}
+
+@media (min-width: 868px) {
+  main {
+    background: rgb(245, 4, 44);
+  }
+
+  .content {
+    background: rgb(0, 238, 255);
+  }
+
+  .sidebar {
+    background: rgb(225, 0, 255);
   }
 }
