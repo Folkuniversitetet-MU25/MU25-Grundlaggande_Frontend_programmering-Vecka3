@@ -1,0 +1,66 @@
+/* 🗣️ Talarmanus: Vi börjar med en enkel mobil-först layout. Allt staplas på höjden. */
+
+/* 🗣️ Talarmanus: Vad gör box-sizing?
+
+Som standard (alltså om man inte sätter något) använder webbläsaren content-box.
+
+Det betyder: width och height gäller bara content-ytan.
+padding och border läggs ovanpå → boxen blir större än du tänkt dig. 
+
+
+Med box-sizing: border-box; Då räknas padding och border inuti den angivna width/height.
+
+* = alla element. Det gör att allt på sidan använder border-box som standard.
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
+header,
+footer {
+  background: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+}
+
+main {
+  display: block;
+}
+
+.content,
+.sidebar {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  background: #e4cbcb;
+}
+
+/* 🗣️ Talarmanus: Här lägger vi till en media query. När skärmen är bredare än 768px får vi två kolumner. */
+
+@media (min-width: 768px) {
+  main {
+    display: flex;
+    gap: 1rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+
+  .content {
+    flex: 3;
+    background: #f5f7fa;
+  }
+
+  .sidebar {
+    flex: 1;
+    background: #eef0f2;
+  }
+}

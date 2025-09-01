@@ -1,0 +1,17 @@
+Självständiga övningar – Måndag 1 sep
+
+1) Blocka upp en enkel webbsida
+- Skapa tydliga block/containers (header, main, section, aside, footer)
+- Skriv så lite CSS som möjligt – strukturera HTML först
+
+--------------------------------------------------
+
+2) Lägg till minst 1 media query
+- Välj t.ex. 768px
+- Ändra antingen layout (flex) eller bara bakgrundsfärg för att se effekten
+
+--------------------------------------------------
+
+Extra
+- Testa två brytpunkter (600px och 1024px)
+- Låt typografin skala upp på större skärmar
