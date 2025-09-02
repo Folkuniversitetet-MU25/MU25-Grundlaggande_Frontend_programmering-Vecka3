@@ -78,6 +78,7 @@ Vi lägger till en liten visuell feedback på våra navigationslänkar. När man
 .navbar a:focus-visible {
   background: rgba(255, 255, 255, 0.12);
   outline: 2px solid transparent;
+  text-decoration: underline; /* valfritt */
 }
 
 /* Cards */
