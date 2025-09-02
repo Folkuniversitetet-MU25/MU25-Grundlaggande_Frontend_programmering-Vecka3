@@ -1,0 +1,270 @@
+🧭 Workshop – 🚀 CSS Flexbox  
+⏰ Tid: ca 3h  
+📚 Kurs: Grundläggande Frontend-programmering  
+📅 Vecka 3 – Tisdag 2 sep  
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål  
+Efter lektionen ska studenterna kunna:  
+
+✅ Förklara vad Flexbox är och när det används  
+✅ Använda flex-container och flex-items  
+✅ Förstå och tillämpa display: flex, flex-direction, justify-content, align-items  
+✅ Använda gap istället för margin för spacing  
+✅ Känna till grunderna i flex-grow, flex-shrink och flex-basis  
+
+--------------------------------------------------
+
+📌 Kort lektionsagenda  
+- PowerPoint & Teori  
+- Code-Along (navigationsmeny + cards)  
+- Självständiga övningar  
+- Reflektion & Q&A  
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering (3 timmar)  
+
+**00:00–00:45 – PowerPoint & Teori (Slides: Flexbox-intro → flex-grow/shrink/basis)**  
+**00:45–01:25 – Code-Along**  
+- Navigationsmeny med Flexbox  
+- En rad med “cards” som är centrerade och jämnt fördelade  
+
+**01:25–02:15 – Självständiga övningar**  
+**02:15–03:00 – Reflektion & Q&A**
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint – Talarmanus
+
+🟨 Slide 1 – CSS Flexbox
+
+🗣️ "Idag ska vi prata om Flexbox – en modern layoutmetod i CSS som gör det mycket enklare att skapa flexibla och responsiva layouter."
+
+--------------------------------------------------
+
+🟨 Slide 2 – Hur gör man en container flexibel?
+
+🗣️ "För att göra en container flexibel använder vi Flexbox. Vi talar om för webbläsaren att den här behållaren ska styra sina barns placering på ett smartare sätt än standardflödet."
+
+--------------------------------------------------
+
+🟨 Slide 3 – Vad är flexbox?
+
+🗣️ "Flexbox är ett sätt att lägga ut element så de kan växa, krympa och anpassa sig efter utrymmet. Det ersätter äldre metoder som float och positionering."
+
+--------------------------------------------------
+
+🟨 Slide 4 – Flexbox är en modern layoutalgoritm (en riktning)
+
+🗣️ "Flexbox jobbar alltid i en riktning åt gången – antingen rad eller kolumn. Vill vi styra både rader och kolumner samtidigt använder vi CSS Grid."
+
+--------------------------------------------------
+
+🟨 Slide 5 – Flex container
+
+🗣️ "En flex-container definierar den yta där flex används. Vi sätter display: flex för att aktivera det. Med flex-direction kan vi bestämma riktningen – row eller column."
+
+--------------------------------------------------
+
+🟨 Slide 6 – Vad är flexbox? (rent tekniskt)
+
+🗣️ "Rent tekniskt kan man tänka på flexbox som en låda med riktning. Alla barn i den här lådan kommer att styras utifrån den riktning vi valt."
+
+--------------------------------------------------
+
+🟨 Slide 7 – parent > child
+
+🗣️ "När vi sätter display:flex på en förälder blir den en flex-container. Alla dess barn blir flex-items. Det är alltid föräldern som styr, inte barnen själva."
+
+--------------------------------------------------
+
+🟨 Slide 8 – Två riktningar
+
+🗣️ "Vi kan styra riktningen med flex-direction: row, row-reverse, column eller column-reverse. Det gör det enkelt att byta struktur utan att ändra HTML-koden."
+
+--------------------------------------------------
+
+🟨 Slide 9 – Positionering i föräldern (default row)
+
+🗣️ "När flex-direction är row jobbar justify-content längs raden – vänster till höger – medan align-items jobbar uppifrån och ned. Standard är att allt hamnar i en rad från vänster."
+
+--------------------------------------------------
+
+🟨 Slide 10 – Positionering i föräldern (column)
+
+🗣️ "När vi byter till column flippar axlarna. Då styr justify-content vertikalt och align-items horisontellt. Det är viktigt att hålla koll på vilken axel som är huvudaxeln."
+
+--------------------------------------------------
+
+🟨 Slide 11 – (Bildslide: justify-content)
+
+🗣️ "Här ser vi visuella exempel på justify-content: flex-start, flex-end, center, space-between, space-around och space-evenly."
+
+--------------------------------------------------
+
+🟨 Slide 12 – (Bildslide: align-items)
+
+🗣️ "Här ser vi samma sak för align-items – hur elementen placeras längs korsaxeln: flex-start, flex-end, center och stretch."
+
+--------------------------------------------------
+
+🟨 Slide 13 – Justify-content & Align-items
+
+🗣️ "Justify-content = hur elementen sprids längs huvudaxeln. Align-items = hur de sprids längs korsaxeln. Tillsammans ger de mycket kontroll."
+
+--------------------------------------------------
+
+🟨 Slide 14 – Dags att öva
+
+--------------------------------------------------
+
+🟨 Slide 15 – Kodövning
+
+🗣️ "Nu får ni prova att positionera element med justify-content och align-items i en liten kodövning."
+
+--------------------------------------------------
+
+🟨 Slide 16 – Kontrollera spridningen (space-between)
+
+🗣️ "Med space-between sprids elementen ut så första hamnar längst till vänster och sista längst till höger, medan resten jämnas ut emellan."
+
+--------------------------------------------------
+
+🟨 Slide 17 – Kontrollera spridningen (space-evenly)
+
+🗣️ "Med space-evenly blir avstånden lika stora före, mellan och efter elementen. Det är det mest symmetriska alternativet."
+
+--------------------------------------------------
+
+🟨 Slide 18 – Dags att öva
+
+
+--------------------------------------------------
+
+🟨 Slide 19 – Kodövning
+
+🗣️ "Nu får ni öva på att använda space-between och space-evenly i praktiken."
+
+--------------------------------------------------
+
+🟨 Slide 20 – Funkar utmärkt…
+
+🗣️ "Flexbox funkar utmärkt när alla barn ska följa samma system. Men vad gör vi om vi vill placera ett barn på ett annat sätt än de andra?"
+
+--------------------------------------------------
+
+🟨 Slide 21 – Behålla position, byta sida (align-self)
+
+🗣️ "Med align-self kan vi skriva över align-items för ett enskilt element. Perfekt när bara ett barn ska sticka ut."
+
+--------------------------------------------------
+
+🟨 Slide 22 – (Bildslide: align-self)
+
+🗣️ "Här ser ni hur align-self kan få en enskild box att placera sig annorlunda än de andra."
+
+--------------------------------------------------
+
+🟨 Slide 23 – Positionering hos barnet
+
+🗣️ "Vi kan alltså mecka om rejält – varje barn kan ha sin egen placering: flex-start, flex-end eller center. Align-self ger den friheten."
+
+--------------------------------------------------
+
+🟨 Slide 24 – May the force be with you (margin: auto)
+
+🗣️ "Ibland kan margin: auto vara ett ännu enklare sätt att flytta ett element. Tänk på det som att vi låter marginalerna putta elementet till rätt plats."
+
+--------------------------------------------------
+
+🟨 Slide 25 – Justify-content & Align-items + Align-self
+
+🗣️ "Här ser ni en översikt av alla tre tillsammans: justify-content, align-items och align-self. De täcker de flesta positioneringsfallen i Flexbox."
+
+--------------------------------------------------
+
+🟨 Slide 26 – Flex-grow
+
+🗣️ "Flex-grow styr hur mycket ett element får växa när det finns extra utrymme. Default är 0. Sätter vi 1 delar elementen lika, 2 får dubbelt så mycket utrymme."
+
+--------------------------------------------------
+
+🟨 Slide 27 – Flex-wrap
+
+🗣️ "Flex-wrap avgör om items ska bryta rad eller inte. Default är nowrap, vilket kan göra att elementen trycks ihop. Med wrap hoppar de ner på nästa rad. Wrap-reverse vänder ordningen."
+
+--------------------------------------------------
+
+🟨 Slide 28 – Flex-items
+
+🗣️ "Flex-items är barnen i en flex-container. Deras beteende styrs av tre parametrar: grow, shrink och basis. Kortformen flex sätter alla tre."
+
+--------------------------------------------------
+
+🟨 Slide 29 – Exempel på flex-kombinationer
+
+🗣️ "Här är två vanliga mönster: flex: 1 1 auto; för att dela lika, eller flex: 0 0 200px; för fasta kort."
+
+--------------------------------------------------
+
+🟨 Slide 30 – I HTML
+
+🗣️ "Så här ser HTML ut: en nav-container med flera länkar som barn. Nästa steg är att styla dem med Flexbox i CSS."
+
+--------------------------------------------------
+
+🟨 Slide 31 – CSS-exempel
+
+🗣️ "I CSS aktiverar vi flex på containern och sätter regler för flex-items. Exempelvis .flex-container { display: flex; } och .flex-item { flex: 1; }."
+
+--------------------------------------------------
+
+🟨 Slide 32 – Mer läsning
+
+🗣️ "Vill ni fördjupa er rekommenderar jag CSS-Tricks guide till Flexbox och spelen Flexbox Froggy och Flexbox Defense."
+
+--------------------------------------------------
+
+🟨 Slide 33 – Kodövning: card
+
+🗣️ "Nu får ni bygga ett kort med Flexbox. Använd det ni lärt er: flex-direction, justify-content, align-items och flex-grow."
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+💻 Code-Along  
+
+### indexCA.html
+Genomför den koden
+
+stylesCA/styleCA.css
+Genomför den koden
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Självständiga övningar
+
+--------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+Vad gör Flexbox bättre än float och positionering?
+
+När är Grid ett bättre val än Flexbox?
+
+Hur kan gap förenkla din kod jämfört med margin?
+
+Hur märkte du skillnaden på justify-content vs align-items i övningarna?

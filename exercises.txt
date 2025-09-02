@@ -1,20 +1,14 @@
-Självständiga övningar – Måndag 1 sep
+Självständiga övningar – Tisdag 2 sep
 
-1) Blocka upp en enkel webbsida
-- Skapa tydliga block/containers (header, main, section, aside, footer)
-- Skriv så lite CSS som möjligt – strukturera HTML först
+Skapa en produktlista med Flexbox.
 
---------------------------------------------------
+Default: produkterna ligger på rad.
 
-2) Lägg till minst 1 media query
-- Välj t.ex. 768px
-- Ändra antingen layout (flex) eller bara bakgrundsfärg för att se effekten
+När fönstret blir smalt (< 600px): använd media query så produkterna staplas i en kolumn.
 
---------------------------------------------------
+💡 Extra: Lägg till gap mellan produkterna, och testa att ge olika flex-grow-värden så vissa produkter tar mer plats.
 
-Extra
-- Testa två brytpunkter (600px och 1024px)
-- Låt typografin skala upp på större skärmar
+Leka runt med alla egenskaper och värden som Flexbox har. Kombinera med media queries så ni tränar också på responsiv design innan fredag.
 
 --------------------------------------------------
 --------------------------------------------------
@@ -22,7 +16,7 @@ Extra
 
 Övningar från PP hittar ni:
 
-1: Slide 11-12
+1: Slide 15
 
 --------------------------------------------------
 
@@ -30,9 +24,18 @@ Extra
 
 --------------------------------------------------
 
-2: Slide 19
+3: Slide 33
 
 --------------------------------------------------
+--------------------------------------------------
+--------------------------------------------------
 
-3: Slide 45
+Reflektion & Q&A
 
+- Vad gör Flexbox bättre än float och positionering?
+
+- När är Grid ett bättre val än Flexbox?
+
+- Hur kan gap förenkla din kod jämfört med margin?
+
+- Hur märkte du skillnaden på justify-content vs align-items i övningarna?

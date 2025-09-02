@@ -1,0 +1,108 @@
+/* 
+- CSS Reset länkar:
+https://www.joshwcomeau.com/css/custom-css-reset/
+https://meyerweb.com/eric/tools/css/reset/
+https://www.geeksforgeeks.org/css/what-is-a-css-reset/
+
+- 🔎 Varför box-sizing: border-box; på *?
+
+Som standard (alltså om du inte anger något) använder webbläsare box-sizing: content-box;.
+
+Det betyder att width/height bara räknas på content, och padding + border läggs ovanpå.
+
+Ex: width: 200px; padding: 20px; border: 10px; → boxen blir egentligen 260px bred.
+
+Med box-sizing: border-box; räknas padding + border inuti width/height.
+
+Samma exempel → boxen är exakt 200px bred totalt.
+
+- Därför gör vi det på *
+
+* = gäller alla element.
+
+Det gör att alla element på sidan blir mer förutsägbara i sin storlek.
+
+Det blir lättare att bygga layouter (speciellt med flexbox/grid) eftersom du slipper att padding eller border spräcker en rad.
+
+Det är idag en best practice – används i alla CSS resets, ramverk (Bootstrap, Tailwind, Normalize.css).
+
+- Gör det skillnad här, i din kod?
+
+Ja, om du t.ex. sätter width: 200px på .card och lägger padding: 2rem, så kommer kortet:
+
+Utan border-box → bli större än 200px.
+
+Med border-box → fortfarande vara 200px totalt, padding ligger “inuti”.
+
+Just i din kod (med flex: 1 1 200px) blir skillnaden att korten håller sig snyggt inom den angivna flex-basen istället för att växa “oväntat”.
+*/
+
+/* Reset
+
+ “Box-sizing gäller även på pseudo-element. Om vi glömmer skriva med ::before och ::after kan det hända att små dekor-element vi lägger till räknas fel i storlek. Därför ser ni ofta reseten med alla tre: *, *::before och *::after. Det gör hela sidan mer förutsägbar.”
+*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navigation */
+.navbar {
+  display: flex;
+  justify-content: space-around; /* sprid ut länkarna */
+  align-items: center;
+  background: #333;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+/* Liten feedback för tillgänglighet 
+
+Vi lägger till en liten visuell feedback på våra navigationslänkar. När man hovrar med musen eller tabbar sig fram med tangentbord får länken en bakgrund. Det gör att användaren alltid ser var de befinner sig. Tillgänglighet handlar inte bara om skärmläsare – det handlar också om att ge visuell guidning till alla användare.
+*/
+.navbar a:hover,
+.navbar a:focus-visible {
+  background: rgba(255, 255, 255, 0.12);
+  outline: 2px solid transparent;
+}
+
+/* Cards */
+.card-row {
+  display: flex;
+  justify-content: space-evenly; /* jämnt avstånd mellan korten */
+  align-items: center;
+  gap: 1rem; /* skillnad mot margin: gap funkar direkt */
+  margin: 2rem;
+}
+
+.card {
+  flex: 1 1 200px; /* väx tillgängligt, krymp vid behov, basbredd 200px */
+  border: 1px solid #ccc;
+  padding: 2rem;
+  text-align: center;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+/* Bonus: visa mobile-first-tänk – stapla korten på smal skärm */
+@media (max-width: 600px) {
+  .card-row {
+    flex-direction: column;
+    align-items: stretch; /* så korten fyller bredden */
+    margin: 1rem;
+  }
+}
