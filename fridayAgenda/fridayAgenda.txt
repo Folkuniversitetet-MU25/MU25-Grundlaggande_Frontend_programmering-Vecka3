@@ -1,0 +1,261 @@
+🧭 Workshop – 🚀 CSS Grid & Examination Intro
+⏰ Tid: ca 3h
+📚 Kurs: Grundläggande Frontend-programmering
+📅 Vecka 3 – Fredag 5 sep
+
+--------------------------------------------------
+--------------------------------------------------
+
+🎯 Lektionsmål
+
+Efter lektionen ska studenterna kunna:
+
+✅ Förklara vad CSS Grid är och när man använder det
+✅ Använda grundläggande grid-egenskaper (grid-template-columns, grid-template-rows, gap)
+✅ Använda grid areas för att bygga och omplacera layouter
+✅ Skapa klassiska sidlayouter med Grid (header, main, sidebar, footer)
+✅ Bygga en responsiv layout som ändrar struktur vid olika brytpunkter
+✅ Förstå examinationens upplägg och krav
+
+--------------------------------------------------
+--------------------------------------------------
+
+📝 Lektionsplanering (3 timmar)
+
+00:00–00:40 – Code Review (HTML + CSS från veckans övningar)
+
+    - Feedback med “2 stars and a wish”.
+
+00:40–01:20 – PowerPoint & Teori (CSS Grid grunder)
+
+01:20–01:50 – Code-Along (Portfolio-layout)
+
+    - Bygg en enkel portfolio med Grid
+
+    - Använd grid-template-areas för att placera element
+
+    - Lägg till en media query → vid bredare skärm flytta sidebar och gör fler kolumner
+
+01:50–02:20 – Självständiga övningar
+
+02:20–02:45 – Reflektion & Q&A
+
+02:45–03:00 – Examination Intro & Frågestund
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 PowerPoint – Talarmanus
+
+--------------------------------------------------
+
+🟨 Slide 1 – CSS Grid
+
+🗣️ “Idag ska vi gå igenom CSS Grid – ett 2D-layoutsystem i CSS som gör det enkelt att skapa komplexa och responsiva layouter. Flexbox jobbar i en dimension (rad eller kolumn), men Grid kan hantera båda samtidigt.”
+
+🗣️ “Flexbox är perfekt för att ordna element i en rad eller kolumn. Men när vi vill bygga hela sidstrukturer, med rader och kolumner samtidigt, då är Grid det starkare verktyget. Tänk: Flexbox = en linje, Grid = ett rutnät.”
+
+--------------------------------------------------
+
+🟨 Slide 2 – Grid består av: Columns, Rows, Gap
+
+🗣️ “En Grid består alltid av tre saker: kolumner, rader och gapet mellan dem. Vi styr kolumner med grid-template-columns, rader med grid-template-rows, och gap bestämmer avståndet.”
+
+--------------------------------------------------
+
+🟨 Slide 3 – grid-template-columns
+
+🗣️ “grid-template-columns definierar hur många kolumner vi har, och hur breda de ska vara. Vi kan använda px, %, fr (fraction units), eller repeat() för att förenkla.”
+
+--------------------------------------------------
+
+🟨 Slide 4 – grid-template-rows
+
+🗣️ “grid-template-rows fungerar likadant, fast för höjden på raderna. Ofta låter vi rader vara auto – alltså anpassa sig efter innehållet – men ibland sätter vi fasta höjder.”
+
+--------------------------------------------------
+
+🟨 Slide 5 – Template = Byggnadsställning
+
+🗣️ “Med grid-template definierar vi själva byggnadsställningen. Vi sätter upp ett rutnät som vi sedan kan fylla med innehåll. Det gör att vi kan separera struktur och innehåll på ett snyggt sätt.”
+
+--------------------------------------------------
+
+🟨 Slide 6 – Parent > Child (Grid container > Grid items)
+
+🗣️ “Grid fungerar alltid på samma sätt: föräldern är en grid-container, och alla direkta barn blir grid-items. Det är containern som styr rutnätet, och barnen lägger sig i de rutor vi definierar.”
+
+--------------------------------------------------
+
+🟨 Slide 7 – Viktiga egenskaper (list-slide)
+
+🗣️ “De viktigaste egenskaperna i Grid är: grid-template-columns, grid-template-rows, grid-auto-rows, grid-template-areas och gap. Med dessa kan vi bygga nästan alla layouter ni sett på webben.”
+
+🟨 gap
+
+🗣️ “Gap är avståndet mellan rader och kolumner. Det här är enklare och renare än att använda margin, eftersom det alltid blir jämnt och hör till själva griden.”
+
+🟨 grid-auto-rows
+
+🗣️ “Med grid-auto-rows kan vi säga vilken höjd nya rader ska ha om det behövs fler än vi definierat. Till exempel kan alla nya rader få auto eller en minsta höjd.”
+
+🟨 Grid-template-areas
+
+🗣️ “Grid areas är en av de mest kraftfulla funktionerna. Vi kan namnge delar av vårt rutnät – till exempel header, main, sidebar – och sedan rita upp layouten direkt i CSS.”
+
+--------------------------------------------------
+
+🟨 Slide 8 – Grid item
+
+🗣️ “När vi har en grid-container kan vi ge varje item ett namn med grid-area. Till exempel: header, main, sidebar. De här namnen kan vi sedan använda i förälderns grid-template-areas. Det gör layouten tydligare och lättare att underhålla.”
+
+--------------------------------------------------
+
+🟨 Slide 9 – Bild (6 kolumner, 4 rader)
+
+🗣️ “Här ser vi en grid med sex kolumner och fyra rader. Vi kan koda detta med grid-template-columns: repeat(6, 1fr); och grid-template-rows: 120px 120px 120px 120px;. Maxbredden kan vi sätta till 1000px för att centrera hela layouten.”
+
+--------------------------------------------------
+
+🟨 Slide 10 – Bild
+
+--------------------------------------------------
+
+🟨 Slide 11 – Övning
+
+--------------------------------------------------
+
+🟨 Slide 12 – Klassisk layout (bild)
+
+🗣️ “Här ser vi en klassisk layout: högst upp ett område som tar upp alla kolumner, sedan en main-yta som täcker fyra kolumner och en sidebar som täcker de två sista. Här är ett exempel på hur traditionella webbsidor bygges upp.”
+
+--------------------------------------------------
+
+🟨 Slide 13 – Grid-area på klassisk layout
+
+🗣️ “Här har vi lagt till namnen direkt på ytorna: grid-area: top;, grid-area: main; och grid-area: sidebar;. Nu blir det ännu tydligare vilka delar som hör till vad.”
+
+--------------------------------------------------
+
+🟨 Slide 14 – CSS för grid-areas
+
+🗣️ “Så här ser koden ut för att koppla elementen till sina grid-areas:
+
+header { grid-area: top; }
+main { grid-area: main; }
+aside { grid-area: sidebar; }
+
+
+Varje element placeras i rätt ruta tack vare namnet.”
+
+--------------------------------------------------
+
+🟨 Slide 15 – Ett namn / kolumn (grid-template-areas)
+
+🗣️ “I grid-template-areas kan vi rita upp vår layout rad för rad. Här ser ni att ‘top’ fyller hela första raden, och sedan har vi main och sidebar i nästa rad. Det blir nästan som ASCII-art.”
+
+ℹ️ ASCII-art = när man “ritar” bilder eller mönster med vanliga tecken i text.
+
+--------------------------------------------------
+
+🟨 Slide 16 – grid-template-areas i CSS
+
+🗣️ “I containern skriver vi:
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "top top top top top top"
+    "main main main main sidebar sidebar";
+}
+
+
+Här ser ni hur enkelt det blir att läsa och förstå layouten.”
+
+--------------------------------------------------
+
+🟨 Slide 17 – En rad i taget (grid-template-rows)
+
+🗣️ “Vi kan också styra höjderna rad för rad. Här är första raden 100px hög och den andra auto, vilket betyder att innehållet bestämmer höjden. Auto används ofta för att sidan ska anpassa sig.”
+
+--------------------------------------------------
+
+🟨 Slide 18 – grid-template-rows i CSS
+
+🗣️ “Här ser ni samma exempel i kod. Raderna definieras med grid-template-rows: 100px auto;. Det betyder att top får fast höjd och main/sidebar växer efter innehållet.”
+
+--------------------------------------------------
+
+🟨 Slide 19 – Komplett grid-container
+
+🗣️ “Här sätter vi ihop alla delar:
+
+Vi säger att containern är en grid.
+
+Vi delar upp den i sex lika breda kolumner.
+
+Vi gör två rader, en fast på 100px och en som anpassar sig efter innehållet.
+
+Vi ritar upp våra områden: top tar hela första raden, main tar fyra kolumner, sidebar tar två.
+
+Nu har vi en fullständig grid-layout.”
+
+--------------------------------------------------
+
+🟨 Slide 20 – fr
+
+🗣️ “I förra exemplet använde vi repeat(6, 1fr). Det betyder: skapa sex kolumner, alla lika breda. 1fr står för en andel av det lediga utrymmet. Om vi hade skrivit 2fr 1fr, då hade första kolumnen fått dubbelt så mycket plats som den andra.”
+
+--------------------------------------------------
+
+🟨 Slide 21 – Men fasen va coolt! Tell me more!
+
+🗣️ “Här är några resurser för att lära sig mer:
+
+CSS Tricks guide till Grid – komplett dokumentation.
+
+Grid Garden – ett spel för att öva CSS Grid.
+
+Grid Critters – en rolig träningsplattform.
+
+Det här är superbra sätt att träna utanför lektionen.”
+
+--------------------------------------------------
+--------------------------------------------------
+
+💻 Code-Along – Portfolio-layout
+
+📂 Mappstruktur:
+
+fridayAgenda/
+  ├── indexCA.html
+  └── stylesCA/styleCA.css
+
+indexCA.html 
+Genomför den koden
+
+styleCA.css
+Genomför den koden
+
+--------------------------------------------------
+--------------------------------------------------
+
+🧠 Självständiga övningar
+
+--------------------------------------------------
+--------------------------------------------------
+
+📢 Reflektion & Q&A
+
+--------------------------------------------------
+--------------------------------------------------
+
+Examination Intro & Frågestund
+
+- Gå igenom grupp-examinationens upplägg, mål och bedömning.
+
+- Dela in i grupper
+
+- Öppna upp för frågor om krav, arbetssätt och bedömning.

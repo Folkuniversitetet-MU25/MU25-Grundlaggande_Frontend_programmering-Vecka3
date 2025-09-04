@@ -1,41 +1,31 @@
-Självständiga övningar – Tisdag 2 sep
+Självständiga övningar – Fredag 5 sep
 
-Skapa en produktlista med Flexbox.
+1. Grundlayout med Grid
 
-Default: produkterna ligger på rad.
+    - Bygg en layout som är en kolumn på mobil, men tre kolumner på desktop.
 
-När fönstret blir smalt (< 600px): använd media query så produkterna staplas i en kolumn.
+    - Använd grid-template-columns: repeat(3, 1fr); för desktop.
 
-💡 Extra: Lägg till gap mellan produkterna, och testa att ge olika flex-grow-värden så vissa produkter tar mer plats.
+2. Grid areas
 
-Leka runt med alla egenskaper och värden som Flexbox har. Kombinera med media queries så ni tränar också på responsiv design innan fredag.
+    - Bygg en layout med header, main, sidebar, footer.
 
---------------------------------------------------
---------------------------------------------------
---------------------------------------------------
+    - Placera om elementen vid en brytpunkt (t.ex. flytta sidebar under main på mobil).
 
-Övningar från PP hittar ni:
+3. Extra utmaning
 
-1: Slide 15
+    - Kombinera Grid + Flexbox.
 
---------------------------------------------------
+    - Exempel: använd Grid för övergripande layout och Flexbox för kort-raden inuti main.
 
-2: Slide 19
 
---------------------------------------------------
-
-3: Slide 33
-
---------------------------------------------------
 --------------------------------------------------
 --------------------------------------------------
 
 Reflektion & Q&A
 
-- Vad gör Flexbox bättre än float och positionering?
+- När ska man välja Grid framför Flexbox?
 
-- När är Grid ett bättre val än Flexbox?
+- Hur märktes skillnaden när du byggde egen layout?
 
-- Hur kan gap förenkla din kod jämfört med margin?
-
-- Hur märkte du skillnaden på justify-content vs align-items i övningarna?
+- Vad var lätt/svårt med grid areas?

@@ -1,0 +1,197 @@
+/* =========================
+   Bas / Reset
+   ========================= */
+/* 🗣️ Talarmanus: Gör mått förutsägbara (inkl. pseudo-element) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Denna code along, kopiera och klistra in det som inte handlar om layout och grid för att spara tid. */
+
+:root {
+  /* 🗣️ -- = globala variabler i rooten.
+
+  Poängen: vi kan ändra alla avstånd, färger eller storlekar på ett ställe, och det slår igenom i hela projektet.
+
+🗣️ “:root är som vårt centrala kontrollrum. Här sparar vi våra färger, storlekar och avstånd som variabler. Med var(--gap) kan vi använda samma värde överallt. Det gör koden mycket mer konsekvent och lätt att underhålla – ändrar jag --gap här, så uppdateras hela sidan.”
+  */
+  --maxw: 1000px;
+  --gap: 1rem;
+  --bg: #0f172a; /* slate-900 */
+  --ink: #e5e7eb; /* gray-200 */
+  --ink-weak: #94a3b8; /* slate-400 */
+  --panel: #111827; /* gray-900 */
+  --card: #111827;
+  --accent: #22c55e; /* green-500 */
+}
+
+/* Vi nollställer både html och body för att vara helt säkra. I praktiken hade body räckt i de flesta fall idag – men det här är en klassisk best practice i resets. */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* Länkar */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover,
+a:focus-visible {
+  text-decoration: underline;
+}
+
+/* Små hjälparklasser */
+.card {
+  background: var(--card);
+  border: 1px solid #1f2937; /* gray-800 */
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+/* =========================
+   GRID-LAYOUT (MOBIL FÖRST)
+   ========================= */
+/* 🗣️ Talarmanus:
+   - display:grid aktiverar Grid
+   - 6 kolumner med repeat(6, 1fr) ⇒ sex lika delar
+   - 2 rader: 100px + auto (auto = innehållet bestämmer)
+   - gap = mellanrum mellan celler
+   - grid-template-areas = “ASCII-art” som ritar layouten
+*/
+.grid-container {
+  display: grid;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: var(--gap);
+  gap: var(--gap);
+  grid-template-columns: repeat(
+    6,
+    1fr
+  ); /* 🗣️ 1fr = en andel av ledigt utrymme */
+  grid-template-rows: 100px auto auto auto;
+  /* ✅ NAV och FOOTER finns nu med i areas */
+  grid-template-areas:
+    "top    top    top    top    top    top"
+    "nav    nav    nav    nav    nav    nav"
+    "main   main   main   main   sidebar sidebar"
+    "footer footer footer footer footer footer";
+}
+
+/* =========================
+   Layout-ytor (kopplas till grid-areas)
+   ========================= */
+.site-header {
+  grid-area: top;
+  background: linear-gradient(180deg, #0b1220, #0f172a);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+
+  /* 🗣️ Talarmanus: Innehållet i headern placeras med flex */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* titel vänster, nav höger */
+  gap: 0.5rem;
+}
+.site-header h1 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.site-header p {
+  margin: 0;
+  color: var(--ink-weak);
+  font-size: 0.95rem;
+}
+
+.site-nav {
+  grid-area: nav;
+  display: flex;
+  gap: 0.75rem;
+}
+.site-nav a {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  color: var(--ink);
+  background: #0b1220;
+  border: 1px solid #1f2937;
+}
+.site-nav a:hover,
+.site-nav a:focus-visible {
+  background: #111827;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+  text-decoration: none;
+}
+
+.site-main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+.site-main .card h2 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+}
+.site-main .card p {
+  margin: 0;
+  color: var(--ink-weak);
+}
+
+.site-aside {
+  grid-area: sidebar;
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.site-footer {
+  grid-area: footer;
+  background: #0b1220;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+}
+
+.site-footer p {
+  margin: 0;
+  color: var(--ink-weak);
+}
+
+/* =========================
+   RESPONSIV BRYTPUNKT
+   ========================= */
+/* 🗣️ Talarmanus: Vid ≤ 720px staplar vi allt i en kolumn
+   - Demonstrera hur en media query kan ändra grid areas
+*/
+@media (max-width: 720px) {
+  .grid-container {
+    grid-template-columns: 1fr; /* en kolumn */
+    /* Denna kan ibland kännas onödig, eftersom Grid ändå skapar rader automatiskt. Men här skriver vi ut den för tydlighetens skull: vi visar att vi tänker oss fem rader i layouten, och att alla ska växa efter innehållet. Det gör koden mer förutsägbar när projekt växer.” */
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+      "top"
+      "nav"
+      "main"
+      "sidebar"
+      "footer";
+  }
+
+  /* Header: lägg nav under titeln på små skärmar */
+  /* .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  } */
+
+  /* Main: 1 kolumn för kort */
+  .site-main {
+    grid-template-columns: 1fr;
+  }
+}

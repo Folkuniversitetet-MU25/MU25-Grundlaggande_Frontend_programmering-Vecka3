@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 🗣️ Talarmanus: Viktigt för mobil — 1 CSS-px ≈ 1 device-px -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CSS Grid – Code Along</title>
+    <link rel="stylesheet" href="./stylesCA/stylesCA.css" />
+  </head>
+  <body>
+    <!-- 🗣️ Talarmanus: .grid-container är vår grid-förälder -->
+    <div class="grid-container">
+      <!-- 🗣️ Talarmanus: Vi namnger ytorna via grid-area i CSS -->
+      <header class="site-header">
+        <h1>Min Portfolio</h1>
+        <p>Grid areas + responsiv layout</p>
+      </header>
+
+      <nav class="site-nav" aria-label="Huvudmeny">
+        <a href="#">Hem</a>
+        <a href="#">Projekt</a>
+        <a href="#">Om mig</a>
+        <a href="#">Kontakt</a>
+      </nav>
+
+      <main class="site-main">
+        <article class="card">
+          <h2>Projekt A</h2>
+          <p>Kort beskrivning av projektet.</p>
+        </article>
+        <article class="card">
+          <h2>Projekt B</h2>
+          <p>Kort beskrivning av projektet.</p>
+        </article>
+        <article class="card">
+          <h2>Projekt C</h2>
+          <p>Kort beskrivning av projektet.</p>
+        </article>
+      </main>
+
+      <aside class="site-aside">
+        <h3>Sidebar</h3>
+        <ul>
+          <li><a href="#">Länk 1</a></li>
+          <li><a href="#">Länk 2</a></li>
+          <li><a href="#">Länk 3</a></li>
+        </ul>
+      </aside>
+
+      <footer class="site-footer">
+        <p>© 2025 – Namn Efternamn</p>
+      </footer>
+    </div>
+  </body>
+</html>
